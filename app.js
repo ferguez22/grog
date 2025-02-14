@@ -40,7 +40,7 @@ document.querySelector('#clientForm2 .nextBtn').addEventListener('click', functi
     form3.style.display = 'block'; // Mostrar la quinta pantalla
     form3.classList.add('fade-in');
 
-        const selectedRadio2 = document.querySelector('input[name="tinder2"]:checked');
+    const selectedRadio2 = document.querySelector('input[name="tinder2"]:checked');
     if (selectedRadio2) {
         respuestas.tinder2 = selectedRadio2.value; // Almacenar respuesta
     }
@@ -48,12 +48,13 @@ document.querySelector('#clientForm2 .nextBtn').addEventListener('click', functi
 
 document.querySelector('#clientForm3 .nextBtn').addEventListener('click', function () {
     const form3 = document.getElementById('clientForm3');
-    form3.style.display = 'none'; // Ocultar la cuarta pantalla
+    form3.style.display = 'none'; // Ocultar la quinta pantalla
+
     const divthanks = document.getElementById('thankYouMessage');
     divthanks.style.display = 'block'; // Mostrar el mensaje de agradecimiento
     divthanks.classList.add('fade-in');
 
-        const selectedRadio3 = document.querySelector('input[name="tinder3"]:checked');
+    const selectedRadio3 = document.querySelector('input[name="tinder3"]:checked');
     if (selectedRadio3) {
         respuestas.tinder3 = selectedRadio3.value; // Almacenar respuesta
     }
@@ -63,7 +64,25 @@ document.querySelector('#clientForm3 .nextBtn').addEventListener('click', functi
 
     // Mostrar el enlace de Instagram
     document.getElementById('instagramLink').style.display = 'block'; // Mostrar el enlace de Instagram
-    mostrarRespuestas();
+});
+
+// Agregar evento de clic al enlace de Instagram
+document.getElementById('instagramLink').addEventListener('click', function () {
+    // Ocultar el mensaje de agradecimiento
+    document.getElementById('thankYouMessage').style.display = 'none'; // Ocultar el div de agradecimiento
+
+    // Mostrar el mensaje de "Verificando..."
+    document.getElementById('verifying').style.display = 'block'; // Mostrar el mensaje de verificando
+
+    // Esperar 8000 ms antes de mostrar el cupón y las respuestas
+    setTimeout(function () {
+        document.getElementById('verifying').style.display = 'none'; // Ocultar el mensaje de verificando
+        document.getElementById('coupon').style.display = 'block'; // Mostrar el cupón
+        mostrarRespuestas(); // Mostrar las respuestas
+
+        // Almacenar que el usuario ha reclamado el cupón
+        localStorage.setItem('claimedCoupon', 'true');
+    }, 8000);
 });
 
 function toggleNextButton() {
@@ -72,7 +91,7 @@ function toggleNextButton() {
     const radios1 = document.querySelectorAll('input[name="tinder1"]');
     const radios2 = document.querySelectorAll('input[name="tinder2"]');
     const radios3 = document.querySelectorAll('input[name="tinder3"]');
-    
+
     const nextButton1 = document.querySelector('#clientForm1 .nextBtn');
     const nextButton2 = document.querySelector('#clientForm2 .nextBtn');
     const nextButton3 = document.querySelector('#clientForm3 .nextBtn');
@@ -95,7 +114,7 @@ function mostrarRespuestas() {
     const userResponsesDiv = document.getElementById('userResponses');
     const username = document.getElementById('username').value; // Obtener el nombre de usuario de Instagram
     userResponsesDiv.innerHTML = `
-    <p>${username} dice:</p>
+    <p>@${username} dice:</p>
         <h3 class="badge">1. Si Grog fuera una cita de Tinder, ¿cómo sería?</h3>
         <p><strong>${respuestas.tinder1}</strong></p>
         <h3 class="badge">2. ¿Qué consejo le darías a tu "yo" de hace tres copas?</h3>
@@ -104,6 +123,7 @@ function mostrarRespuestas() {
         <p><strong>${respuestas.tinder3}</strong></p>
     `;
 }
+
 // Agregar evento de entrada a los campos de texto
 document.getElementById('username').addEventListener('input', toggleNextButton);
 document.getElementById('name').addEventListener('input', toggleNextButton);
@@ -126,53 +146,6 @@ radioButtons3.forEach(radio => {
     radio.addEventListener('change', toggleNextButton);
 });
 
-const nextButtons = document.querySelectorAll('.nextBtn');
-let currentFormIndex = 0;
-
-nextButtons.forEach((button, index) => {
-    button.addEventListener('click', function () {
-        const currentForm = document.getElementById(`clientForm${index + 1}`);
-        currentForm.style.display = 'none'; // Ocultar el formulario actual
-        currentFormIndex++;
-
-        if (currentFormIndex < nextButtons.length) {
-            const nextForm = document.getElementById(`clientForm${currentFormIndex + 1}`);
-            nextForm.style.display = 'block'; // Mostrar el siguiente formulario
-            nextForm.classList.add('fade-in');
-        } else {
-            // Mostrar el mensaje de agradecimiento después de completar la última pantalla
-            document.getElementById('thankYouMessage').style.display = 'block';
-            document.getElementById('instagramLink').style.display = 'block'; // Mostrar el enlace de Instagram
-        }
-    });
-});
-
-document.getElementById('instagramLink').addEventListener('click', function () {
-    // Ocultar el mensaje de agradecimiento y el enlace de Instagram
-    document.getElementById('thankYouMessage').style.display = 'none';
-    document.getElementById('instagramLink').style.display = 'none';
-    
-    // Ocultar todas las pantallas y formularios
-    document.getElementById('startScreen').style.display = 'none';
-    document.getElementById('instagramScreen').style.display = 'none';
-    document.getElementById('clientForm1').style.display = 'none';
-    document.getElementById('clientForm2').style.display = 'none';
-    document.getElementById('clientForm3').style.display = 'none';
-
-    // Mostrar el mensaje de "Verificando..."
-    document.getElementById('verifying').style.display = 'block';
-
-    localStorage.setItem('followedGrog', 'true');
-    
-    // Cambiar el tiempo de espera a 8000 ms (8 segundos)
-    setTimeout(function () {
-        // Ocultar el mensaje de "Verificando..."
-        document.getElementById('verifying').style.display = 'none';
-        // Mostrar el cupón
-        document.getElementById('coupon').style.display = 'block';
-    }, 8000); // Cambiado a 8000 ms
-});
-
 // Almacenar respuestas en localStorage
 function almacenarRespuestas() {
     localStorage.setItem('respuestas', JSON.stringify(respuestas));
@@ -193,14 +166,6 @@ window.addEventListener('load', function () {
     if (localStorage.getItem('claimedCoupon') === 'true') {
         document.getElementById('coupon').style.display = 'block';
         document.getElementById('startScreen').style.display = 'none'; // Ocultar la primera pantalla
-    } else if (localStorage.getItem('followedGrog') === 'true') {
-        document.getElementById('verifying').style.display = 'block';
-        setTimeout(function () {
-            document.getElementById('verifying').style.display = 'none';
-            document.getElementById('coupon').style.display = 'block';
-            localStorage.setItem('followedGrog', 'false');
-            localStorage.setItem('claimedCoupon', 'true');
-        }, 100);
     } else {
         // Si no hay datos en localStorage, mostrar la primera pantalla
         document.getElementById('startScreen').style.display = 'block';

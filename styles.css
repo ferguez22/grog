@@ -13,7 +13,7 @@ body {
     justify-content: center;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 800 !important;
     background-color: #017f02;
     margin: 0;
     padding: 0;
@@ -172,6 +172,7 @@ label{
 
 .labelPreguntas {
     display: inline-block;
+    width: 100%;
     font-size: 1.2rem;
     margin: 10px 0;
     padding: 10px;

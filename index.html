@@ -13,8 +13,7 @@
     <meta property="og:description"
         content="Participa en nuestro quiz y sigue a GROG en Instagram para ganar un cóctel gratis." />
     <meta property="og:image" content="URL_DE_TU_IMAGEN" />
-    <!-- Reemplaza con la URL de la imagen que deseas mostrar -->
-    <meta property="og:url" content="URL_DE_TU_PAGINA" /> <!-- Reemplaza con la URL de tu página -->
+    <meta property="og:url" content="URL_DE_TU_PAGINA" />
 </head>
 
 <body>
@@ -37,16 +36,21 @@
             <label for="name">Nombre:</label>
             <input type="text" id="name" name="name" required>
             <button type="button" class="nextBtn" disabled>Siguiente</button>
-
         </div>
 
         <!-- Tercera pantalla -->
-        <form id="clientForm1" required>
+        <form id="clientForm1" style="display:none;" required>
             <div class="radio-group">
                 <label class="labelPregunta">1. Si Grog fuera una cita de Tinder, ¿cómo sería?</label>
-                <label class="labelPreguntas"><input type="radio" name="tinder1" value="Un 10/10 que te hace olvidar a tu ex." required>Un 10/10 que te hace olvidar a tu ex.</label><br>
-                <label class="labelPreguntas"><input type="radio" name="tinder1" value="Un 'solo por esta noche' que se repite cada semana." required>Un "solo por esta noche" que se repite cada semana.</label><br>
-                <label class="labelPreguntas"><input type="radio" name="tinder1" value="Como mi ex: caro, pero no puedo dejarlo." required>Como mi ex: caro, pero no puedo dejarlo.</label>
+                <label class="labelPreguntas"><input type="radio" name="tinder1"
+                        value="Un 10/10 que te hace olvidar a tu ex." required>Un 10/10 que te hace olvidar a tu
+                    ex.</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder1"
+                        value="Un 'solo por esta noche' que se repite cada semana." required>Un "solo por esta noche"
+                    que se repite cada semana.</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder1"
+                        value="Como mi ex: caro, pero no puedo dejarlo." required>Como mi ex: caro, pero no puedo
+                    dejarlo.</label>
             </div>
             <button type="button" class="nextBtn" disabled>Siguiente</button>
             <p class="abajp">Se brillante, absurdo o ambas, No hay reglas.</p>
@@ -56,9 +60,15 @@
         <form id="clientForm2" style="display:none;" required>
             <div class="radio-group">
                 <label class="labelPregunta">2. ¿Qué consejo le darías a tu "yo" de hace tres copas?</label>
-                <label class="labelPreguntas"><input type="radio" name="tinder2" value="No debiste enviar esa nota de voz." required>No debiste enviar esa nota de voz.</label><br>
-                <label class="labelPreguntas"><input type="radio" name="tinder2" value="Baja la voz, no eres tan gracioso." required>Baja la voz, no eres tan gracioso.</label><br>
-                <label class="labelPreguntas"><input type="radio" name="tinder2" value="Come algo antes de seguir bebiendo." required>Come algo antes de seguir bebiendo.</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder2"
+                        value="No debiste enviar esa nota de voz." required>No debiste enviar esa nota de
+                    voz.</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder2"
+                        value="Baja la voz, no eres tan gracioso." required>Baja la voz, no eres tan
+                    gracioso.</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder2"
+                        value="Come algo antes de seguir bebiendo." required>Come algo antes de seguir
+                    bebiendo.</label><br>
             </div>
             <button type="button" class="nextBtn">Siguiente</button>
             <p class="abajp">Se brillante, absurdo o ambas, No hay reglas.</p>
@@ -68,37 +78,37 @@
         <form id="clientForm3" style="display:none;" required>
             <div class="radio-group">
                 <label class="labelPregunta">3. Sin el coctel gratis, mi vida será…</label>
-                <label class="labelPreguntas"><input type="radio" name="tinder3" value="Triste y vacía." required>Triste y vacía.</label><br>
-                <label class="labelPreguntas"><input type="radio" name="tinder3" value="Un peligro para mi ex." required>Un peligro para mi ex.</label><br>
-                <label class="labelPreguntas"><input type="radio" name="tinder3" value="Igual, pero con menos dinero." required>Igual, pero con menos dinero.</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder3" value="Triste y vacía." required>Triste
+                    y vacía.</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder3" value="Un peligro para mi ex."
+                        required>Un peligro para mi ex.</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder3" value="Igual, pero con menos dinero."
+                        required>Igual, pero con menos dinero.</label><br>
             </div>
             <button type="button" class="nextBtn">Siguiente</button>
             <p class="abajp">Se brillante, absurdo o ambas, No hay reglas.</p>
-
         </form>
 
-        <!--Sexta pantalla -->
+        <!-- Sexta pantalla -->
         <div id="thankYouMessage" style="display:none;">
-            <br>
-            <h2 class="titblan">¡Cóctel gratis a la vista! Solo falta un paso:</h2><br>
-
-            <!-- Enlace de Instagram oculto inicialmente -->
-            <a class="startQuiz" href="https://www.instagram.com/grog" target="_blank" id="instagramLink" style="display:none;">¡Siguenos
-                en Insta!</a>
+            <h2 class="titblan">¡Cóctel gratis a la vista! Solo falta un paso:</h2>
+            <a class="startQuiz" href="https://www.instagram.com/grogafterwork" target="_blank" id="instagramLink"
+                style="display:none;">¡Síguenos en Insta!</a>
         </div>
 
-        <!-- Septima Pantalla -->
+        <!-- Séptima Pantalla -->
         <div id="coupon" style="display:none;">
-            <h2 style="font-weight: 500;">Tu cóctel gratis te espera en el <span style="font-size: 1.9rem; font-weight: 900"><br>Little Bobby.</span></h2>
-            <p style="font-size: 0.7rem;">Reclamar antes del 16/02/24</p><hr>
+            <h2 style="font-weight: 500;">Tu cóctel gratis te espera en el <span
+                    style="font-size: 1.9rem; font-weight: 900"><br>Little Bobby.</span></h2>
+            <p style="font-size: 0.7rem;">Reclamar antes del 16/02/24</p>
+            <hr>
             <img src="./assets/cocktail.png" alt="cocktail" class="cocktail">
             <div id="userResponses"></div>
         </div>
 
-        <div id="verifying">
+        <div id="verifying" style="display:none;">
             Verificando...
         </div>
-
 
     </section>
     <script src="./app.js"></script>
