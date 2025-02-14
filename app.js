@@ -78,6 +78,7 @@ document.getElementById('instagramLink').addEventListener('click', function () {
     setTimeout(function () {
         document.getElementById('verifying').style.display = 'none'; // Ocultar el mensaje de verificando
         document.getElementById('coupon').style.display = 'block'; // Mostrar el cupón
+        document.querySelector('header').style.display = 'none'; // Ocultar el logo
         mostrarRespuestas(); // Mostrar las respuestas
 
         // Almacenar que el usuario ha reclamado el cupón

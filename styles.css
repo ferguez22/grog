@@ -145,7 +145,7 @@ a {
     margin: 0 auto;
     background-color: #fff;
     color: #4CAF50;
-    font-size: 1rem;
+    font-size: 0.7rem;
     border-radius: 20px;
     padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
@@ -266,7 +266,7 @@ h2, h1 {
 }
 
 .cocktail{
-    width: 80px;
+    width: 100px;
 }
 
 .badge {
