@@ -13,7 +13,7 @@ body {
     justify-content: center;
     text-align: center;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 800 !important;
+    font-weight: bold !important;
     background-color: #017f02;
     margin: 0;
     padding: 0;
@@ -189,14 +189,13 @@ label{
 
 .labelPregunta{
     font-size: 1.5rem;
-color: white !important;
+    color: white !important;
 }
 
 .startQuiz {
     display: block;
     font-size: 1.2rem;
     margin-bottom: 10px;
-    font-weight: bold;
     color: #017f02;
     padding: 10px;
     border-radius: 10px;

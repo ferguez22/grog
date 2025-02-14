@@ -166,6 +166,7 @@ window.addEventListener('load', function () {
     if (localStorage.getItem('claimedCoupon') === 'true') {
         document.getElementById('coupon').style.display = 'block';
         document.getElementById('startScreen').style.display = 'none'; // Ocultar la primera pantalla
+        document.querySelector('header').style.display = 'none'; // Ocultar el logo
     } else {
         // Si no hay datos en localStorage, mostrar la primera pantalla
         document.getElementById('startScreen').style.display = 'block';
