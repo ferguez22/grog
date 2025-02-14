@@ -1,0 +1,218 @@
+/* Estilos existentes */
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Montserrat', Arial, sans-serif;
+    background-color: #00801c;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+header {
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+header img {
+    width: 100px;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    width: 100%;
+    margin-top: 80px;
+    /* Espacio para el header fijo */
+}
+
+section {
+    background-color: #ffffff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 90%;
+    box-sizing: border-box;
+    text-align: center;
+    /* Centrar el contenido del section */
+}
+
+form {
+    margin-top: 20px;
+    display: none;
+    /* Ocultar el formulario inicialmente */
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.radio-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.radio-group label {
+    font-weight: normal;
+    color: #555;
+}
+
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #08970b;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+#verifying {
+    display: none;
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff3cd;
+    color: #856404;
+    border: 1px solid #ffeeba;
+    border-radius: 5px;
+}
+
+#coupon {
+    display: none;
+    align-content: center;
+    width: 90%;
+    height: 75vh;
+    background-color: #a9dab5;
+    color: #155724;
+    font-size: 1.7rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    animation: bounce 1.0s;
+}
+
+/* Animación de rebote */
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+.labelPreguntas {
+    display: block;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    background-color: #f2f2f2;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.labelPregunta {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+#startQuiz {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f2f2f2;
+    margin: 0 auto;
+    /* Centrar el botón */
+}
+
+/* ANIMACIONES */
+
+/* Animación para mostrar el formulario */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Clase para activar la animación */
+.fade-in {
+    animation: fadeIn 0.5s ease-in-out forwards;
+}
+s
+.nextBtn {
+    display: inline-block; /* Asegúrate de que el botón se muestre como un bloque en línea */
+    font-size: 1.2rem; /* Tamaño de fuente */
+    margin-top: 10px; /* Espacio superior */
+    padding: 10px 20px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 5px; /* Bordes redondeados */
+    background-color: #28a745; /* Color de fondo verde */
+    color: white; /* Color del texto */
+    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+}
+
+.nextBtn:hover {
+    background-color: #218838; /* Color de fondo más oscuro al pasar el mouse */
+    transform: translateY(-2px); /* Efecto de elevación */
+}
+
+.nextBtn:disabled {
+    background-color: #ccc; /* Color de fondo para el botón deshabilitado */
+    cursor: not-allowed; /* Cambiar el cursor para indicar que no se puede hacer clic */
+}

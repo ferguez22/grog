@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+</head>
+
+<body>
+    <header>
+        <img src="./assets/Logo_Grog_Blanco.png" alt="Logo GROG">
+    </header>
+    <section>
+
+        <!-- Primera pantalla -->
+        <div id="startScreen" style="display:none;">
+            <h2 id="titulo-quiz">¿Quieres ganar un chupito gratis?</h2>
+            <button id="startQuiz">¡A tope!</button>
+        </div>
+
+        <!-- Segunda Pantalla -->
+        <div id="instagramScreen" style="display:none;">
+            <h1>Pon tu usuario de Instagram</h1>
+            <label for="username">Usuario:</label>
+            <input type="text" id="username" name="username" required>
+        </div>
+
+        <!-- Tercera pantalla -->
+        <form id="clientForm1" required>
+            <div class="radio-group">
+                <label class="labelPregunta">Si Grog fuera una cita de Tinder, ¿cómo sería?</label>
+                <label class="labelPreguntas"><input type="radio" name="tinder1" value="10/10" required>Un 10/10 que te hace
+                    olvidar a tu ex</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder1" value="solo por esta noche" required>Un "solo
+                    por
+                    esta noche" que se repite cada semana</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder1" value="mala idea" required>Una mala idea de la
+                    que no me arrepiento (todavía)</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder1" value="como mi ex" required>Como mi ex: caro,
+                    pero no puedo dejarlo</label>
+            </div>
+            <button type="button" class="nextBtn" disabled>Siguiente</button>
+        </form>
+
+        <!-- Cuarta Pantalla -->
+        <form id="clientForm2" style="display:none;" required>
+            <div class="radio-group">
+                <label class="labelPregunta">¿Qué consejo le darías a tu "yo" de hace tres copas?</label>
+                <label class="labelPreguntas"><input type="radio" name="tinder2" value="nota-voz" required>No debiste enviar esa
+                    nota de voz</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder2" value="bajar-voz" required>Baja la voz, no eres
+                    tan gracioso</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder2" value="comer" required>Come algo antes de seguir
+                    bebiendo</label><br>
+            </div>
+            <button type="button" class="nextBtn">Siguiente</button>
+        </form>
+
+        <!-- Quinta pantalla -->
+        <form id="clientForm3" style="display:none;" required>
+            <div class="radio-group">
+                <label class="labelPregunta">Sin el coctel gratis, mi vida será…</label>
+                <label class="labelPreguntas"><input type="radio" name="tinder3" value="triste" required>Triste y
+                    vacía</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder3" value="peligro" required>Un peligro para mi
+                    ex</label><br>
+                <label class="labelPreguntas"><input type="radio" name="tinder3" value="igual" required>Igual, pero con menos
+                    dinero</label><br>
+            </div>
+            <button type="button" class="nextBtn">Siguiente</button>
+        </form>
+
+        <div id="verifying">
+            Verificando...
+        </div>
+        <div id="coupon">
+            ¡Has ganado un <strong>cóctel gratis</strong> por haber seguido a GROG en Instagram!
+        </div>
+
+        <!-- Mensaje de agradecimiento oculto inicialmente -->
+        <div id="thankYouMessage" style="display:none;">
+            <br><h2>Gracias por responder las preguntas, ahora sigue a GROG en Instagram para ganar tu premio.</h2><br>
+        </div>
+
+        <!-- Enlace de Instagram oculto inicialmente -->
+        <a href="https://www.instagram.com/grog" target="_blank" id="instagramLink" style="display:none;">Seguir a GROG
+            en
+            Instagram</a>
+    </section>
+    <script src="./app.js"></script>
+</body>
+
+</html>
