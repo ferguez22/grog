@@ -6,12 +6,21 @@ body {
     align-items: center;
     justify-content: center;
     text-align: center;
-    font-family: 'Montserrat', Arial, sans-serif;
-    background-color: #00801c;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #017f02;
     margin: 0;
     padding: 0;
     overflow-x: hidden;
     min-height: 100vh;
+}
+
+
+.titblan{
+    color: white;
+}
+
+p{
+    color: white;
 }
 
 header {
@@ -22,6 +31,7 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    margin-bottom: 20px;
 }
 
 header img {
@@ -40,16 +50,22 @@ main {
 }
 
 section {
-    background-color: #ffffff;
     margin: 20px auto;
     padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     width: 90%;
     box-sizing: border-box;
     text-align: center;
     /* Centrar el contenido del section */
+}
+
+#titulo-quiz{
+    color: white;
+}
+
+#start-quiz{
+    color: white;
 }
 
 form {
@@ -62,7 +78,7 @@ label {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #333;
+    color: #017f02;
 }
 
 input[type="text"] {
@@ -81,7 +97,7 @@ input[type="text"]:focus {
 }
 
 .radio-group {
-    text-align: left;
+    text-align: center;
     margin-bottom: 20px;
 }
 
@@ -118,11 +134,13 @@ a {
     display: none;
     align-content: center;
     width: 90%;
-    height: 75vh;
-    background-color: #a9dab5;
-    color: #155724;
-    font-size: 1.7rem;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    color: #4CAF50;
+    font-size: 1rem;
     border-radius: 20px;
+    padding: 20px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
     animation: bounce 1.0s;
 }
@@ -140,35 +158,41 @@ a {
     }
 }
 
+label{
+    color: white;
+    text-align: left;
+}
+
 .labelPreguntas {
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-    background-color: #f2f2f2;
+    display: inline-block;
+    font-size: 1.2rem;
+    margin: 10px 0;
     padding: 10px;
-    border-radius: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    color: #4bc44b;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
-.labelPregunta {
+.labelPreguntas:hover {
+    background-color: #e0e0e0;
+}
+
+.labelPregunta{
+    font-size: 1.5rem;
+color: white !important;
+}
+
+.startQuiz {
     display: block;
     font-size: 1.2rem;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #333;
+    color: #017f02;
     padding: 10px;
     border-radius: 10px;
-}
-
-#startQuiz {
-    display: block;
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-    font-weight: bold;
-    color: #333;
-    padding: 10px;
-    border-radius: 10px;
+    border: none;
     background-color: #f2f2f2;
     margin: 0 auto;
     /* Centrar el botón */
@@ -193,26 +217,63 @@ a {
 .fade-in {
     animation: fadeIn 0.5s ease-in-out forwards;
 }
-s
+
 .nextBtn {
-    display: inline-block; /* Asegúrate de que el botón se muestre como un bloque en línea */
-    font-size: 1.2rem; /* Tamaño de fuente */
-    margin-top: 10px; /* Espacio superior */
-    padding: 10px 20px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    background-color: #28a745; /* Color de fondo verde */
-    color: white; /* Color del texto */
-    cursor: pointer; /* Cambiar el cursor al pasar el mouse */
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+    display: block;
+    font-size: 1.2rem;
+    /* Cambiado para que coincida con el tamaño del botón startQuiz */
+    margin-bottom: 10px;
+    /* Espaciado inferior */
+    font-weight: bold;
+    /* Negrita para que coincida con el estilo */
+    color: #017f02;
+    /* Color del texto */
+    padding: 10px;
+    /* Espaciado interno */
+    border-radius: 10px;
+    /* Bordes redondeados */
+    border: none;
+    /* Sin borde */
+    background-color: #f2f2f2;
+    /* Color de fondo */
+    margin: 0 auto;
+    /* Centrar el botón */
+    transition: background-color 0.3s;
+    /* Transición para el color de fondo */
 }
 
 .nextBtn:hover {
-    background-color: #218838; /* Color de fondo más oscuro al pasar el mouse */
-    transform: translateY(-2px); /* Efecto de elevación */
+    background-color: #e0e0e0;
+    /* Color de fondo al pasar el mouse */
 }
 
 .nextBtn:disabled {
-    background-color: #ccc; /* Color de fondo para el botón deshabilitado */
-    cursor: not-allowed; /* Cambiar el cursor para indicar que no se puede hacer clic */
+    background-color: #ccc;
+    /* Color de fondo cuando está deshabilitado */
+    cursor: not-allowed;
+    /* Cambiar el cursor cuando está deshabilitado */
+}
+
+h2, h1 {
+    font-weight: bold;
+}
+
+.cocktail{
+    width: 80px;
+}
+
+.badge {
+    display: inline-block;
+    background-color: #28a745;
+    /* Color verde */
+    color: white;
+    /* Texto blanco */
+    padding: 5px 10px;
+    /* Espaciado interno */
+    border-radius: 12px;
+    /* Bordes redondeados */
+    font-size: 1rem;
+    /* Tamaño de fuente */
+    margin: 5px 0;
+    /* Margen superior e inferior */
 }
