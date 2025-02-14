@@ -115,7 +115,7 @@ function mostrarRespuestas() {
     const userResponsesDiv = document.getElementById('userResponses');
     const username = document.getElementById('username').value; // Obtener el nombre de usuario de Instagram
     userResponsesDiv.innerHTML = `
-    <p>@${username} dice:</p>
+    <p><span style="color: black;">@${username}</span> dice:</p>
         <h3 class="badge">1. Si Grog fuera una cita de Tinder, ¿cómo sería?</h3>
         <p><strong>${respuestas.tinder1}</strong></p>
         <h3 class="badge">2. ¿Qué consejo le darías a tu "yo" de hace tres copas?</h3>
